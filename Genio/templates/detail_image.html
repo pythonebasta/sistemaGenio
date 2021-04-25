@@ -1,0 +1,49 @@
+{% extends 'display_images.html' %}
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Immagini</title>
+    
+  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+      </script>
+</head>
+<body>
+
+    {% block content %}
+  
+    <a class="btn btn-info"  href="/images" role="button">Immagini </a>
+
+    </div>
+
+    <h4 style = "text-align:center" >Nome Immagine: {{ imd.Nome }}</h4>
+    <br>
+    
+
+    <img src="{{ imd.Immagine.url }}" class="img-responsive" style="width: 20%; float: center; margin-left:40%;" />
+    <br>
+    <h5 style = "text-align:center" >Width Immagine: {{ imd.Image_Width }}</h5>
+    <h5 style = "text-align:center" >Height Immagine: {{ imd.Image_Height }}</h5>
+    <h5 style = "text-align:center" >Bits_Pixel: {{ imd.Bits_Pixel }}</h5>
+    <h5 style = "text-align:center" >Pixel_Format: {{ imd.Pixel_Format }}</h5>
+    <h5 style = "text-align:center" >Compression_Rate: {{ imd.Compression_Rate }}</h5>
+    <h5 style = "text-align:center" >Image_DPI_Width: {{ imd.Image_DPI_Width }}</h5>
+    <h5 style = "text-align:center" >Image_DPI_Height: {{ imd.Image_DPI_Height }}</h5>
+    <h5 style = "text-align:center" >Compression: {{ imd.Compression }}</h5>
+    <h5 style = "text-align:center" >MIME_Type: {{ imd.MIME_Type }}</h5>
+    <h5 style = "text-align:center" >Endianness: {{ imd.Endianness }}</h5>
+
+    <br>
+    
+
+
+    {% endblock content %}
+  
+        
+  
+</body>
+</html>

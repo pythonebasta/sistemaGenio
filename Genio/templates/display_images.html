@@ -1,0 +1,35 @@
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Immagini</title>
+  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+      </script>
+      
+</head>
+<body>
+    <a class="btn btn-info"  href="/" role="button">Dashboard</a>
+    
+<br><br>
+    {% block content %}
+    {% for im in im %}
+            <div class="col-md-4">
+                <h5 style="text-align: center;">Nome:  
+                    {{ im.Nome }}</h5>
+                    
+                   
+                     <img src="{{ im.Immagine.url }}" class="img-responsive" style="width: 30%;  margin-left: 170; margin-right: 0px;" />
+                     <p style = "text-align:center"><strong>Dettaglio: </strong><a href="{{ im.get_absolute_url }}">{{ im.Nome }}</a></p>
+                     <br><br>
+            </div>
+    {% endfor %}
+
+   
+
+    {% endblock content %}
+</body>
+</html>
