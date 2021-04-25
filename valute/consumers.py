@@ -15,7 +15,8 @@ class ChatConsumer(WebsocketConsumer):
         message = text_data_json['message']
 
         cambio_valuta = {'base': 'USD','symbols': 'GBP'}
-        response = requests.get("http://api.exchangeratesapi.io/v1/latest?access_key=3c3087f3418c68c6b8cc8a12a6960840&symbols=EUR,AUD,USD,GBP,CAD,PLN")
+        #nascondo parte del token...
+        response = requests.get("http://api.exchangeratesapi.io/v1/latest?access_key=3c[nascosto]&symbols=EUR,AUD,USD,GBP,CAD,PLN")
         nostre_valute = response.json()
 
         #print(nostre_valute["rates"])
